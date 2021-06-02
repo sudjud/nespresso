@@ -18,16 +18,39 @@
 
 <style lang="sass">
 
+// .about
+//   display: flex
+//   justify-content: space-between
+//   padding-top: 114px
+//   &__text
+//     width: 500px
+//     font-size: 22px
+//     line-height: 28px
+//   &__hashs
+//     font-size: 30px
+//     line-height: 40px
+
 .about
   display: flex
   justify-content: space-between
   padding-top: 114px
+  @media screen and (max-width: 992px)
+    flex-direction: column
+    padding-left: 20px
   &__text
     width: 500px
     font-size: 22px
     line-height: 28px
+    @media screen and (max-width: 992px)
+      margin-left: auto
+      margin-top: 30px
+      margin-right: 20px 
   &__hashs
     font-size: 30px
     line-height: 40px
+    @media screen and (max-width: 992px)
+      margin-right: auto
+
+
 
 </style>

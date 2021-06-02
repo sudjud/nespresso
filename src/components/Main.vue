@@ -33,8 +33,9 @@ export default {
   -moz-box-shadow: 0px 0px 68px 100px rgba(29, 26, 24, 1) inset
   box-shadow: 0px 0px 68px 100px rgba(29, 26, 24, 1) inset
   padding-top: 65px
-  width: 1209px
-  margin: auto
+  width: 1140px
+  margin: 0 auto
+  max-width: calc( 100% - 80px )
   &__top
     text-align: center
     &-title

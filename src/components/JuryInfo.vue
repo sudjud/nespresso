@@ -47,7 +47,8 @@ export default {
 .jury-info
   padding-top: 60px
   display: flex
-  padding-right: 150px
+  padding-right: 50px
+
   &_line
     width: 100%
     height: 1px
@@ -57,29 +58,30 @@ export default {
     margin-bottom: 40px
   &__all
     padding-top: 58px
-    padding-left: 61px
+    padding-left: 61px 
   &__job
     font-size: 17px
     line-height: 20px
     color: #8D8372
     margin-top: 10px
   &__label-wrap
-    width: 77%
-    margin: auto
+    padding: 20px
+    display: inline-block
+    text-align: left 
   &__perisild
     display: flex
     padding-bottom: 5px
     &-name
       font-size: 50px
       line-height: 45px
-      padding-right: 30px
+      padding-right: 0
     &-label
       color: #8D8372
       border: 2px solid #8D8372
       font-size: 20px
       font-weight: 600
-      display: flex
-      align-items: center
+      text-transform: uppercase
+      text-align: center
 .jury-others
   display: flex
   justify-content: space-between

@@ -93,6 +93,8 @@ export default {
     transform: scale(1)
     opacity: 1
     z-index: 5
+  &__card
+    margin-left: -70px
   &__wrapper
     display: flex
     position: relative

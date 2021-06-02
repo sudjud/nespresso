@@ -41,7 +41,6 @@ export default {
   background-size: 100%
   transform: scale(0.8)
   opacity: 0.3
-  margin-left: -70px
   &_active
     transform: scale(1)
     opacity: 1

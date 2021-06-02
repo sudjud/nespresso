@@ -23,27 +23,12 @@ export default {
   },
   data() {
     return {
-      positionSlider: 1,
+      positionSlider: 0,
       songData: [
         {
           song: "Кофейное счастье",
           singer: "Михаил Петров",
           background: petrovImg,
-        },
-        {
-          song: "Тапочки Цинелас",
-          singer: "Чарлин Тупас",
-          background: toopasImg,
-        },
-        { 
-          song: "Третья песня", 
-          singer: "Третье имя", 
-          background: someelseImg 
-        },
-        {
-          song: "Четвертая песня",
-          singer: "Четвертое имя",
-          background: fourthImg
         }
       ],
     };
@@ -55,10 +40,13 @@ export default {
 
 .carousel2
   padding-top: 84px
+  display: flex
+  justify-content: center
   &__wrapper
     display: flex
   &__item
     opacity: 1
     transform: scale(1)
+    margin-right: 23px
 
 </style>
