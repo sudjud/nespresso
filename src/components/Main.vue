@@ -35,7 +35,7 @@ export default {
   padding-top: 65px
   width: 1209px
   margin: auto
-  &__main-top
+  &__top
     text-align: center
     &-title
       font-size: 120px
