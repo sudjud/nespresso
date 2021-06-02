@@ -17,7 +17,7 @@
         class="carousel__btn carousel__btn-next"
         id="next"
       >
-        ❯
+        <img src="../assets/next.png" alt="">
       </div>
       <div
         v-if="positionSlider !== 0"
@@ -26,7 +26,7 @@
         class="carousel__btn carousel__btn-prev"
         id="prev"
       >
-        ❮
+        <img src="../assets/prev.png" alt="">
       </div>
   </div>
 </template>
@@ -108,7 +108,6 @@ export default {
     justify-content: center
     align-items: center
     font-size: 26px
-    padding-right: 3px
     cursor: default
     position: relative
     &-next
