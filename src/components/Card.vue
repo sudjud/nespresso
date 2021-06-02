@@ -6,14 +6,14 @@
     :style="{ backgroundImage: `url(${data.background}` }"
     :class="{ 'card_active' : classItem === 0 }"
   >
-    <div class="card-top">
-      <div class="card-top__song"> {{ data.song }}</div>
-      <div class="card-top__singer">{{ data.singer }} </div>
+    <div class="card__top">
+      <div class="card__top-song"> {{ data.song }}</div>
+      <div class="card__top-singer">{{ data.singer }} </div>
     </div>
     <img src="../assets/play.png" alt="" />
-    <div class="card-footer">
-      <div class="card-footer__place">
-        <div class="card-footer__place-number">1</div>
+    <div class="card__footer">
+      <div class="card__footer-place">
+        <div class="card__footer-place-number">1</div>
         <div>место</div>
       </div>
       <div>Россия</div>
@@ -47,29 +47,29 @@ export default {
     opacity: 1
   img
     margin: 0 auto
-.card-top
-  text-align: center
-  padding: 50px 
-  text-transform: none
-  &__song
-    font-size: 30px
-    line-height: 30px
-    color: #FFFFFF
-    padding-bottom: 10px
-  &__singer
-    font-size: 20px
-    line-height: 24px
-    color: #F1EDE7
-    opacity: 0.7
-.card-footer
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
-    font-size: 18px
-    text-transform: uppercase
-    padding: 0 25px 25px 25px
-    color: #8D8372
-    &__place-number
-      font-size: 100px
-      line-height: 100px
+  &__top
+    text-align: center
+    padding: 50px 
+    text-transform: none
+    &-song
+      font-size: 30px
+      line-height: 30px
+      color: #FFFFFF
+      padding-bottom: 10px
+    &-singer
+      font-size: 20px
+      line-height: 24px
+      color: #F1EDE7
+      opacity: 0.7
+  &__footer
+      display: flex
+      justify-content: space-between
+      align-items: flex-end
+      font-size: 18px
+      text-transform: uppercase
+      padding: 0 25px 25px 25px
+      color: #8D8372
+      &-place-number
+        font-size: 100px
+        line-height: 100px
 </style>

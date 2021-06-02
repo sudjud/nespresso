@@ -1,11 +1,11 @@
 <template>
-  <div class="carousel-2">
-    <div class="carousel-2__wrapper">
+  <div class="carousel2">
+    <div class="carousel2__wrapper">
       <Card 
         v-for="item in songData"
         :key="item.song"
         :data="item"
-        class="carousel-2__item"
+        class="carousel2__item"
       />
     </div>
   </div>
@@ -53,7 +53,7 @@ export default {
 
 <style lang="sass">
 
-.carousel-2
+.carousel2
   padding-top: 84px
   &__wrapper
     display: flex
