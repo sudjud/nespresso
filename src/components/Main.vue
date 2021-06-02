@@ -1,15 +1,15 @@
 <template>
   <div class="main">
-    <div class="main-top">
-      <div class="main-top__title">
+    <div class="main__top">
+      <div class="main__top-title">
         NESPRESSO
       </div>
-      <div class="main-top__small">
+      <div class="main__top-small">
         TALENTS 2021
       </div>
     </div>
 
-    <div class="play"><img src="../assets/filled-play.png" alt=""></div>
+    <div class="main__play"><img src="../assets/filled-play.png" alt=""></div>
     <About />
     <Jury />
   </div>
@@ -35,16 +35,16 @@ export default {
   padding-top: 65px
   width: 1209px
   margin: auto
-.main-top
-  text-align: center
-  &__title
-    font-size: 120px
-    font-weight: 700
-  &__small
-    font-size: 80px
-    font-weight: 400
-    margin-top: 10px
-.play
-  text-align: center
-  margin-top: 26px
+  &__main-top
+    text-align: center
+    &-title
+      font-size: 120px
+      font-weight: 700
+    &-small
+      font-size: 80px
+      font-weight: 400
+      margin-top: 10px
+  &__play
+    text-align: center
+    margin-top: 26px
 </style>
