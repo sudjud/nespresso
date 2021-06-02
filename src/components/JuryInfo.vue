@@ -39,11 +39,7 @@
 </template>
 
 <script>
-import JuryOthers from "./JuryOthers";
 export default {
-  components: {
-    JuryOthers,
-  },
 };
 </script>
 
