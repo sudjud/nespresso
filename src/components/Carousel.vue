@@ -1,7 +1,7 @@
 <template>
   <div class="carousel">
     <div
-        :class="{ hidden : positionSlider == 1 }"
+        :class="{ carousel__btn_hidden : positionSlider == 1 }"
         ref="next"
         @click="next"
         class="carousel__btn carousel__btn-next"
@@ -22,7 +22,7 @@
     </div>
       
       <div
-        :class="{ hidden : positionSlider == -1 }"
+        :class="{ carousel__btn_hidden : positionSlider == -1 }"
         ref="prev"
         @click="prev"
         class="carousel__btn carousel__btn-prev"
@@ -134,6 +134,8 @@ export default {
     cursor: default
     position: relative
     z-index: 100
+    &_hidden
+      visibility: hidden
     @media screen and (max-width: 1200px)
       width: 20px 
       height: 20px
@@ -159,6 +161,5 @@ export default {
         transform: scale(1.1)
       &:active
         transform: scale(0.9)
-.hidden
-  visibility: hidden
+
 </style>
