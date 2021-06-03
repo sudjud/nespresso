@@ -1,7 +1,7 @@
 <template>
   <div id="carousel" class="carousel">
     <div
-        v-if="positionSlider !== 2"
+        :class="{ hidden : positionSlider == 2 }"
         ref="next"
         @click="next"
         class="carousel__btn carousel__btn-next"
@@ -22,7 +22,7 @@
     </div>
       
       <div
-        v-if="positionSlider !== 0"
+        :class="{ hidden : positionSlider == 0 }"
         ref="prev"
         @click="prev"
         class="carousel__btn carousel__btn-prev"
@@ -159,6 +159,6 @@ export default {
         transform: scale(1.1)
       &:active
         transform: scale(0.9)
-.ccenter
-  margin-right: 100px
+.hidden
+  visibility: hidden
 </style>
