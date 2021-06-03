@@ -16,7 +16,7 @@
         :key="item.song"
         :data="item"
         :class="{ carousel__card_active: index === positionSlider, carousel__card_small_left : index === positionSlider - 2, carousel__card_small_right : index === positionSlider + 2 }"
-        :style="{ left: move + 'px', transition: 'left .5s' }"
+        :style="{ left: move + 'px' }"
         class="carousel__card"
       />
     </div>
@@ -98,7 +98,7 @@ export default {
     margin-left: -35px 
     margin-right: -35px
     position: relative
-    transition: transform 1s, opacity 1s
+    transition: all .7s
     @media screen and (max-width: 1200px)
       margin-left: -20px 
       margin-right: -20px
@@ -106,7 +106,6 @@ export default {
       transform: scale(1)
       opacity: 1
       z-index: 5
-      transition: transform 1s, opacity 1s
       img
         display: block
     &_small_left
@@ -114,13 +113,11 @@ export default {
       opacity: 0.1
       position: relative
       z-index: 0
-      transition: transform .5s
     &_small_right
       transform: scale(0.4) translateX(-300px)
       opacity: 0.1
       position: relative
       z-index: 0
-      transition: transform .5s
   &__wrapper
     display: flex
     position: relative
