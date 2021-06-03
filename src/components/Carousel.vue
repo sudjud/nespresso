@@ -42,7 +42,7 @@ export default {
   el: "#carousel",
   methods: {
     next() {
-      if (this.positionSlider === 2) {
+      if (this.positionSlider === this.songData.length) {
         return;
       }
       this.move = this.move - 280
