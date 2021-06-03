@@ -1,32 +1,31 @@
 <template>
-  <div id="carousel" class="carousel">
+  <div class="carousel">
     <div
-        :class="{ hidden : positionSlider == 2 }"
+        :class="{ hidden : positionSlider == 1 }"
         ref="next"
         @click="next"
         class="carousel__btn carousel__btn-next"
-        id="next"
       >
         <img src="../assets/next.png" alt="">
       </div>
-    <div class="carousel__wrapper">
+    <div 
+    class="carousel__wrapper"
+    :style="{ transform : 'translateX(' + move + 'px)' }"
+    >
       <Card
-        id="card"
         v-for="(item, index) in songData"
         :key="item.song"
         :data="item"
-        :class="{ carousel__card_active: index === positionSlider, carousel__card_small_left : index === positionSlider - 2, carousel__card_small_right : index === positionSlider + 2 }"
-        :style="{ left: move + 'px' }"
+        :class="{ carousel__card_active: index === positionSlider + 1, carousel__card_small_right: index === positionSlider -1, carousel__card_small_left: index === positionSlider +3 }"
         class="carousel__card"
       />
     </div>
       
       <div
-        :class="{ hidden : positionSlider == 0 }"
+        :class="{ hidden : positionSlider == -1 }"
         ref="prev"
         @click="prev"
         class="carousel__btn carousel__btn-prev"
-        id="prev"
       >
         <img src="../assets/prev.png" alt="">
       </div>
@@ -45,24 +44,24 @@ export default {
       if (this.positionSlider === this.songData.length) {
         return;
       }
-      this.move = this.move - 280
       this.positionSlider++;
-      console.log(this.positionSlider)
+      this.move = -this.positionSlider * 300
+      console.log(this.positionSlider);
     },
     prev() {
-      if (this.positionSlider === 0) {
+      if (this.positionSlider === -1) {
         return;
       }
-      this.move = this.move + 280
       this.positionSlider--;
-      console.log(this.positionSlider)
+      this.move = -this.positionSlider * 300
+      console.log(this.positionSlider);
     },
   },
   el: "#card",
   data() {
     return {
-      move: 0, 
-      positionSlider: 1,
+      move: 0,
+      positionSlider: 0,
       songData: [
         {
           song: "Кофейное счастье",
@@ -80,7 +79,7 @@ export default {
   },
   components: {
     Card,
-  },
+  }
 };
 </script>
 
@@ -109,18 +108,19 @@ export default {
       img
         display: block
     &_small_left
-      transform: scale(0.4) translateX(300px)
+      transform: scale(0.4) translateX(-300px)
       opacity: 0.1
       position: relative
       z-index: 0
     &_small_right
-      transform: scale(0.4) translateX(-300px)
+      transform: scale(0.4) translateX(300px)
       opacity: 0.1
       position: relative
       z-index: 0
   &__wrapper
     display: flex
     position: relative
+    transition: all .5s
   &__btn
     height: 56px
     width: 56px

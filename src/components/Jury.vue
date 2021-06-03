@@ -1,7 +1,7 @@
 <template>
     <div class="jury">
       <div class="jury__top">
-        <div id="jury" class="jury__top-title">
+        <div class="jury__top-title">
           Работы <br>оценивали
         </div>
         <div class="about__text">

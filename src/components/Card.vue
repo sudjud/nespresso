@@ -2,7 +2,6 @@
   <div
     ref="some"
     class="card"
-    id="card"
     :style="{ backgroundImage: `url(${data.background}` }"
   >
     <div class="card__top">
@@ -38,7 +37,7 @@ export default {
   justify-content: space-between
   background-clip: padding-box
   background-size: 100%
-  transform: scale(0.8)
+  transform: scale(0.8) 
   opacity: 0.3
   @media screen and (max-width: 1200px)
     height: 400px

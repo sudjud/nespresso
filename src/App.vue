@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div >
     <Header />
-    <Main id="competition" />
+    <Main />
     <Winners />
     <Finalists />
   </div>
