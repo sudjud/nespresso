@@ -48,7 +48,6 @@ export default {
   padding-top: 60px
   display: flex
   padding-right: 50px
-
   &_line
     width: 100%
     height: 1px
@@ -71,6 +70,8 @@ export default {
   &__perisild
     display: flex
     padding-bottom: 5px
+    @media screen and (max-width: 1200px)
+      flex-direction: column-reverse
     &-name
       font-size: 50px
       line-height: 45px

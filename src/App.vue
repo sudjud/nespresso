@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Header />
-    <Main />
+    <Main id="competition" />
     <Winners />
-    <Finalists/>
+    <Finalists />
   </div>
 </template>
 

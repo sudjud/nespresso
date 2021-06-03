@@ -1,5 +1,14 @@
 <template>
   <div id="carousel" class="carousel">
+    <div
+        v-if="positionSlider !== 2"
+        ref="next"
+        @click="next"
+        class="carousel__btn carousel__btn-next"
+        id="next"
+      >
+        <img src="../assets/next.png" alt="">
+      </div>
     <div class="carousel__wrapper">
       <Card
         id="card"
@@ -10,15 +19,7 @@
         class="carousel__card"
       />
     </div>
-      <div
-        v-if="positionSlider !== 2"
-        ref="next"
-        @click="next"
-        class="carousel__btn carousel__btn-next"
-        id="next"
-      >
-        <img src="../assets/next.png" alt="">
-      </div>
+      
       <div
         v-if="positionSlider !== 0"
         ref="prev"
@@ -82,8 +83,6 @@ export default {
   padding-top: 130px
   display: flex
   justify-content: center
-  position: relative
-  padding-left: 100px
   background: url('../assets/projector.png') center no-repeat
   -webkit-box-shadow: 0px 71px 96px 51px rgba(29, 26, 24, 0.97) inset
   -moz-box-shadow: 0px 71px 96px 51px rgba(29, 26, 24, 0.97) inset
@@ -93,8 +92,16 @@ export default {
     transform: scale(1)
     opacity: 1
     z-index: 5
+    transition: transform .5s
+    transition-delay: .5s
+    img
+      display: block
   &__card
-    margin-left: -70px
+    margin-left: -35px 
+    margin-right: -35px
+    @media screen and (max-width: 1200px)
+      margin-left: -20px 
+      margin-right: -20px
   &__wrapper
     display: flex
     position: relative
@@ -110,16 +117,28 @@ export default {
     font-size: 26px
     cursor: default
     position: relative
+    z-index: 100
+    @media screen and (max-width: 1200px)
+      width: 20px 
+      height: 20px
+      img
+        height: 10px
     &-next
       top: 330px
-      right: 220px
+      left: 830px
+      @media screen and (max-width: 1200px)
+        top: 190px
+        left: 470px
       &:hover
         transform: scale(1.1)
       &:active
         transform: scale(0.9)
     &-prev
       top: 330px
-      right: 930px
+      right: 830px
+      @media screen and (max-width: 1200px)
+        top: 190px
+        right: 470px
       &:hover
         transform: scale(1.1)
       &:active
