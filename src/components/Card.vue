@@ -40,12 +40,11 @@ export default {
   background-size: 100%
   transform: scale(0.8)
   opacity: 0.3
-  transition: transform .5s
-  transition: opacity .5s
   @media screen and (max-width: 1200px)
     height: 400px
     width: 224px
   &_active
+    transition: 5s
     transform: scale(1)
     opacity: 1
   img

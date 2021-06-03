@@ -15,7 +15,8 @@
         v-for="(item, index) in songData"
         :key="item.song"
         :data="item"
-        :class="{ carousel__card_active: index === positionSlider }"
+        :class="{ carousel__card_active: index === positionSlider, carousel__card_small_left : index === positionSlider - 2, carousel__card_small_right : index === positionSlider + 2 }"
+        :style="{ left: move + 'px', transition: 'left .5s' }"
         class="carousel__card"
       />
     </div>
@@ -44,18 +45,23 @@ export default {
       if (this.positionSlider === 2) {
         return;
       }
+      this.move = this.move - 280
       this.positionSlider++;
+      console.log(this.positionSlider)
     },
     prev() {
       if (this.positionSlider === 0) {
         return;
       }
+      this.move = this.move + 280
       this.positionSlider--;
+      console.log(this.positionSlider)
     },
   },
   el: "#card",
   data() {
     return {
+      move: 0, 
       positionSlider: 1,
       songData: [
         {
@@ -88,20 +94,33 @@ export default {
   -moz-box-shadow: 0px 71px 96px 51px rgba(29, 26, 24, 0.97) inset
   box-shadow: 0px 71px 96px 51px rgba(29, 26, 24, 0.97) inset
   padding-bottom: 106px
-  &__card_active
-    transform: scale(1)
-    opacity: 1
-    z-index: 5
-    transition: transform .5s
-    transition-delay: .5s
-    img
-      display: block
   &__card
     margin-left: -35px 
     margin-right: -35px
+    position: relative
+    transition: transform 1s, opacity 1s
     @media screen and (max-width: 1200px)
       margin-left: -20px 
       margin-right: -20px
+    &_active
+      transform: scale(1)
+      opacity: 1
+      z-index: 5
+      transition: transform 1s, opacity 1s
+      img
+        display: block
+    &_small_left
+      transform: scale(0.4) translateX(300px)
+      opacity: 0.1
+      position: relative
+      z-index: 0
+      transition: transform .5s
+    &_small_right
+      transform: scale(0.4) translateX(-300px)
+      opacity: 0.1
+      position: relative
+      z-index: 0
+      transition: transform .5s
   &__wrapper
     display: flex
     position: relative
@@ -143,4 +162,6 @@ export default {
         transform: scale(1.1)
       &:active
         transform: scale(0.9)
+.ccenter
+  margin-right: 100px
 </style>
