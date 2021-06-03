@@ -5,15 +5,49 @@
       <img src="../assets/kinopoisk.png" alt="">
     </div>
     <div class="header__menu">
-      <a class="header__menu-item" href="#competition">Конкурс</a>
-      <a class="header__menu-item" href="#jury">Жюри</a>
-      <a class="header__menu-item" href="#winners">Победители</a>
+      <a 
+      :href = item.ref
+      v-for="item in menuList" 
+      :key="item.menuList"
+      :class="{'header__menu-item_active': item.class == this.active}"
+      class = 'header__menu-item'
+      v-on:click="makeActive(item.class)"
+      >
+      {{ item.item }}
+      </a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+      menuList:[
+        {
+          item: 'Конкурс',
+          class: 'competition',
+          ref: '#main'
+        },
+        {
+          item: 'Жюри',
+          class: 'jury',
+          ref: '#jury'
+        },
+        {
+          item: 'Победители',
+          class: 'winners',
+          ref: '#winners'
+        },
+      ],
+      active: ''
+    }
+  },
+  methods:{
+    makeActive(item){
+      this.active = item
+    }
+  }
 }
 </script>
 
@@ -43,5 +77,7 @@ export default {
     &-item
       text-decoration: none
       margin-left: 35px
+      &_active
+        opacity: 0.5
 
 </style>

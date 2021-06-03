@@ -1,7 +1,7 @@
 <template>
   <div class="winners">
     <div class="winners__top">
-      <div class="winners__top-title">Победители</div>
+      <div id="winners" class="winners__top-title">Победители</div>
       <div class="winners__top-sub">NESPRESSO TALENTS 2021</div>
     </div>
     <Carousel />

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="main__top">
-      <div class="main__top-title">
+      <div id="main" class="main__top-title">
         NESPRESSO
       </div>
       <div class="main__top-small">
