@@ -17,7 +17,7 @@
         :key="item.song"
         :data="item"
         :class="{ carousel__card_active: index === positionSlider }"
-        :style="{ transform: 'scale('+ (1 - (Math.max( Math.abs(index - positionSlider) * .2, 0))) +')', opacity: 1 - (Math.max( Math.abs(index - positionSlider) * .4, 0)) }"
+        :style="{ transform: 'scale('+ (1 - (Math.max( Math.abs(index - positionSlider) * .1, 0))) +')', opacity: 1 - (Math.max( Math.abs(index - positionSlider) * .4, 0)) }"
         class="carousel__card"
       />
     </div>
