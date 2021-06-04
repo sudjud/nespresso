@@ -82,8 +82,12 @@ export default {
   },
   computed:{
     move(){
-      
-      return (Math.round((this.songData.length - 1) / 2) - this.positionSlider) * this.step
+      const windowWidth = window.innerWidth
+      if(window.innerWidth > 1200){
+        return (Math.round((this.songData.length - 1) / 2) - this.positionSlider) * this.step
+      } else if (window.innerWidth < 1200){
+        return ((Math.round((this.songData.length - 1) / 2) - this.positionSlider) * this.step) / 1.7
+      }
     },
     scale(prop){
       return 1 - Math.abs((Math.round(this.songData.length / 2 - 1) - this.positionSlider) / 10)
