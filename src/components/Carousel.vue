@@ -83,11 +83,13 @@ export default {
   computed:{
     move(){
       const windowWidth = window.innerWidth
-      const moveStep = (Math.round((this.songData.length - 1) / 2) - this.positionSlider) * this.step
+      const moveStep = (x = 1) => {
+        return (((Math.round((this.songData.length - 1)) / 2) - this.positionSlider) * this.step) / x
+      }
       if(windowWidth > 1200){
-        return moveStep
+        return moveStep()
       } else if (windowWidth < 1200){
-        return moveStep / 1.7
+        return moveStep(1.7)
       }
     },
     scale(prop){
