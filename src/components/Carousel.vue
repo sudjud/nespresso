@@ -83,14 +83,8 @@ export default {
   computed:{
     move(){
       const windowWidth = window.innerWidth
-      const moveStep = (x = 1) => {
-        return (((Math.round((this.songData.length - 1)) / 2) - this.positionSlider) * this.step) / x
-      }
-      if(windowWidth > 1200){
-        return moveStep()
-      } else if (windowWidth < 1200){
-        return moveStep(1.7)
-      }
+      const x = windowWidth > 1200 ? 1 : 1.7
+      return (((Math.round((this.songData.length - 1)) / 2) - this.positionSlider) * this.step) / x;
     },
     scale(prop){
       return 1 - Math.abs((Math.round(this.songData.length / 2 - 1) - this.positionSlider) / 10)
@@ -109,6 +103,7 @@ export default {
   -moz-box-shadow: 0px 71px 96px 51px rgba(29, 26, 24, 0.97) inset
   box-shadow: 0px 71px 96px 51px rgba(29, 26, 24, 0.97) inset
   padding-bottom: 106px
+  overflow: hidden
   &__card
     margin-left: -35px 
     margin-right: -35px

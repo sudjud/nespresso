@@ -4,6 +4,7 @@
     <Main />
     <Winners />
     <Finalists />
+    <Footer />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Winners from './components/Winners'
 import Finalists from './components/Finalists'
+import Footer from './components/Footer'
 // import Card from './components/Card'
 
 export default {
@@ -20,7 +22,8 @@ export default {
     Header,
     Main,
     Winners,
-    Finalists
+    Finalists,
+    Footer
     // Card
   }
 }
