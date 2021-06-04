@@ -1,7 +1,7 @@
 <template>
   <div class="carousel">
     <div
-        :class="{ carousel__btn_hidden : positionSlider == 1 }"
+        :class="{ carousel__btn_hidden : positionSlider == songData.length - 1 }"
         ref="next"
         @click="next"
         class="carousel__btn carousel__btn-next"
@@ -16,13 +16,14 @@
         v-for="(item, index) in songData"
         :key="item.song"
         :data="item"
-        :class="{ carousel__card_active: index === positionSlider + 1, carousel__card_small_right: index === positionSlider -1, carousel__card_small_left: index === positionSlider +3 }"
+        :class="{ carousel__card_active: index === positionSlider }"
+        :style="{ transform: 'scale('+ (1 - (Math.max( Math.abs(index - positionSlider) * .2, 0))) +')', opacity: 1 - (Math.max( Math.abs(index - positionSlider) * .4, 0)) }"
         class="carousel__card"
       />
     </div>
       
       <div
-        :class="{ carousel__btn_hidden : positionSlider == -1 }"
+        :class="{ carousel__btn_hidden : positionSlider == 0 }"
         ref="prev"
         @click="prev"
         class="carousel__btn carousel__btn-prev"
@@ -45,23 +46,22 @@ export default {
         return;
       }
       this.positionSlider++;
-      this.move = -this.positionSlider * 300
-      console.log(this.positionSlider);
+      
+      console.log(this.scale);
     },
     prev() {
       if (this.positionSlider === -1) {
         return;
       }
       this.positionSlider--;
-      this.move = -this.positionSlider * 300
-      console.log(this.positionSlider);
+      console.log(this.scale);
     },
   },
   el: "#card",
   data() {
     return {
-      move: 0,
-      positionSlider: 0,
+      positionSlider: 1,
+      step: 300,
       songData: [
         {
           song: "Кофейное счастье",
@@ -79,6 +79,15 @@ export default {
   },
   components: {
     Card,
+  },
+  computed:{
+    move(){
+      
+      return (Math.round((this.songData.length - 1) / 2) - this.positionSlider) * this.step
+    },
+    scale(prop){
+      return 1 - Math.abs((Math.round(this.songData.length / 2 - 1) - this.positionSlider) / 10)
+    }
   }
 };
 </script>
